@@ -1,0 +1,22 @@
+[package]
+name = "rust-rdi"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Memory",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_Networking_WinHttp",
+    "Win32_System_Threading",
+] }
+url = "2.5"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
